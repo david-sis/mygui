@@ -29,9 +29,13 @@ set(MYGUI_WORK_DIR ${MYGUI_BINARY_DIR})
 find_package (CXX11)
 if (CXX11_FOUND)
 	SET(CMAKE_CXX_STANDARD 11)
+    add_definitions(-std=c++11)
 else ()
 	add_definitions(-DMYGUI_NO_CXX11)
 endif ()
+
+include_directories(/usr/local/include/OGRE)
+link_directories(/usr/local/lib/OGRE)
 
 #####################################################################
 # Set up the basic build environment
